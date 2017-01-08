@@ -17,7 +17,8 @@ public class MainActivity extends AppCompatActivity {
         TextView textDebug = (TextView) findViewById(R.id.text01);
         SendData sender = new SendData(this, textDebug);
         sender.execute();
-            /*
+
+        /*
             try {
                 Socket socket = new Socket("10.0.0.10", 81);
                 //OutputStream DOS = socket.getOutputStream();

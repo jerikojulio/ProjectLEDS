@@ -26,17 +26,17 @@ public class SendData extends AsyncTask<String, Void, String> {
 
     protected String doInBackground(String... params) {
         try {
+            tempString = "RESET";
             Socket socket = new Socket("10.0.0.10", 81);
             //OutputStream DOS = socket.getOutputStream();
             DataOutputStream DOS = new DataOutputStream(socket.getOutputStream());
-            tempString = "RESET";
 
-            DOS.writeUTF("RESET");
+            DOS.writeUTF(tempString);
 
             DOS.flush();
             DOS.close();
 
-            //DOS.writeUTF("RESET");
+            //DOS.writeUTF(tempString);
 
             socket.close();
 
