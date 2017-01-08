@@ -9,6 +9,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.text.ParseException;
 
 /**
  * Created by LENOVO on 1/8/2017.
@@ -34,7 +35,7 @@ public class SendData extends AsyncTask<String, Void, String> {
             DOS.writeUTF(tempString);
 
             DOS.flush();
-            DOS.close();
+            //DOS.close();
 
             socket.close();
 
@@ -45,7 +46,9 @@ public class SendData extends AsyncTask<String, Void, String> {
         } catch (IOException ie) {
             ie.printStackTrace();
             tempString = "IOException";
+
         }
+
         return tempString;
     }
 
