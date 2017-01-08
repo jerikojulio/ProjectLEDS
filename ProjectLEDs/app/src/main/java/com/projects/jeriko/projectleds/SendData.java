@@ -35,7 +35,7 @@ public class SendData extends AsyncTask<String, Void, String> {
             DOS.writeUTF(tempString);
 
             DOS.flush();
-            //DOS.close();
+            DOS.close();
 
             socket.close();
 
