@@ -29,7 +29,6 @@ public class SendData extends AsyncTask<String, Void, String> {
         try {
             tempString = "RESET";
             Socket socket = new Socket("10.0.0.10", 81);
-            //OutputStream DOS = socket.getOutputStream();
             DataOutputStream DOS = new DataOutputStream(socket.getOutputStream());
 
             DOS.writeUTF(tempString);
