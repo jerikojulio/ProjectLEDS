@@ -36,8 +36,6 @@ public class SendData extends AsyncTask<String, Void, String> {
             DOS.flush();
             DOS.close();
 
-            //DOS.writeUTF(tempString);
-
             socket.close();
 
         } catch (UnknownHostException e) {
