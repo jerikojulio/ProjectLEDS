@@ -45,9 +45,18 @@ public class BlinkLed extends AsyncTask<String, Void, String> {
             tempString = "IOException";
 
         } finally {
-            if (DOS != null && socket != null) {
+            if (DOS != null) {
                 try {
                     DOS.close();
+                } catch (IOException ie) {
+                    ie.printStackTrace();
+                    tempString = "IOException";
+
+                }
+            }
+
+            if (socket != null) {
+                try {
                     socket.close();
                 } catch (IOException ie) {
                     ie.printStackTrace();

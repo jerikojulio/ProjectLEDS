@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.net.URI;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -39,5 +41,13 @@ public class MainActivity extends AppCompatActivity {
         TextView textDebug = (TextView) findViewById(R.id.text01);
         BlinkLed sender = new BlinkLed(this, textDebug);
         sender.execute();
+
+        try {
+            WebSocketConnect ws = new WebSocketConnect();
+            ws.connect_to_server();
+        } catch (Exception e) {
+            textDebug.setText("WebSocketConnect failed");
+            e.printStackTrace();
+        }
     }
 }
