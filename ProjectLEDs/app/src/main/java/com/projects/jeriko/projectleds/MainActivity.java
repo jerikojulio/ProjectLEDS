@@ -13,9 +13,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void sendData(View view) {
+    public void resetData(View view) {
         TextView textDebug = (TextView) findViewById(R.id.text01);
-        SendData sender = new SendData(this, textDebug);
+        ResetData sender = new ResetData(this, textDebug);
         sender.execute();
 
         /*
@@ -33,5 +33,11 @@ public class MainActivity extends AppCompatActivity {
                 textDebug.setText("failed");
             }
             */
+    }
+
+    public void blinkLed(View view) {
+        TextView textDebug = (TextView) findViewById(R.id.text01);
+        BlinkLed sender = new BlinkLed(this, textDebug);
+        sender.execute();
     }
 }

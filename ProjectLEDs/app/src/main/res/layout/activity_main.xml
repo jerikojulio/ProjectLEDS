@@ -17,12 +17,22 @@
         android:id="@+id/text01" />
 
     <Button
-        android:text="Button"
+        android:text="RESET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/text01"
         android:layout_toEndOf="@+id/text01"
         android:id="@+id/button"
-        android:onClick="sendData" />
+        android:onClick="resetData" />
+
+    <Button
+        android:text="BLINK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button"
+        android:layout_alignLeft="@+id/button"
+        android:layout_alignStart="@+id/button"
+        android:id="@+id/button2"
+        android:onClick="blinkLed" />
 </RelativeLayout>
