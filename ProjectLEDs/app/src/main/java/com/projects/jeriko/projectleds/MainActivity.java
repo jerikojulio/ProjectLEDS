@@ -63,4 +63,16 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+    public void zVal(View view) {
+        TextView textDebug = (TextView) findViewById(R.id.text01);
+
+        try {
+            WebSocketConnect ws = new WebSocketConnect();
+            ws.connect_to_server("z200");
+        } catch (Exception e) {
+            textDebug.setText("WebSocketConnect failed");
+            e.printStackTrace();
+        }
+    }
 }

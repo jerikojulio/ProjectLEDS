@@ -48,7 +48,7 @@
         android:onClick="xVal"/>
 
     <Button
-        android:text="Seet Y"
+        android:text="Set Y"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button3"
@@ -57,4 +57,15 @@
         android:layout_marginTop="12dp"
         android:id="@+id/button4"
         android:onClick="yVal"/>
+
+    <Button
+        android:text="Set Z"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/button5"
+        android:layout_below="@+id/button4"
+        android:layout_alignLeft="@+id/button4"
+        android:layout_alignStart="@+id/button4"
+        android:onClick="zVal"/>
 </RelativeLayout>
