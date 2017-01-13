@@ -35,4 +35,26 @@
         android:layout_alignStart="@+id/button"
         android:id="@+id/button2"
         android:onClick="blinkLed" />
+
+    <Button
+        android:text="Set X"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:id="@+id/button3"
+        android:layout_below="@+id/button2"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_alignStart="@+id/button2"
+        android:onClick="xVal"/>
+
+    <Button
+        android:text="Seet Y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button3"
+        android:layout_alignLeft="@+id/button3"
+        android:layout_alignStart="@+id/button3"
+        android:layout_marginTop="12dp"
+        android:id="@+id/button4"
+        android:onClick="yVal"/>
 </RelativeLayout>

@@ -12,16 +12,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by LENOVO on 1/12/2017.
+ * Created by LENOVO on 1/13/2017.
  */
 
-public class WebSocketConnect {
-
+public class YValue {
     private WebSocketClient mWebSocketClient;
 
-    public void connect_to_server(String inputColor) {
-        final String color;
-        color = inputColor;
+    public void connect_to_server() {
         URI uri;
         try {
             uri = new URI("http://10.0.0.10:81/");
@@ -36,7 +33,7 @@ public class WebSocketConnect {
             @Override
             public void onOpen(ServerHandshake serverHandshake) {
                 Log.i("Websocket", "Opened");
-                mWebSocketClient.send(color);
+                mWebSocketClient.send("y200");
             }
 
             @Override
@@ -56,4 +53,5 @@ public class WebSocketConnect {
         };
         mWebSocketClient.connect();
     }
+
 }

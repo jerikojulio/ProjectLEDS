@@ -16,34 +16,47 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void resetData(View view) {
-        TextView textDebug = (TextView) findViewById(R.id.text01);
-        ResetData sender = new ResetData(this, textDebug);
-        sender.execute();
 
-        /*
-            try {
-                Socket socket = new Socket("10.0.0.10", 81);
-                //OutputStream DOS = socket.getOutputStream();
-                DataOutputStream DOS = new DataOutputStream(socket.getOutputStream());
-                DOS.flush();
-                DOS.close();
-                DOS.writeUTF("x1");
-                socket.close();
-                textDebug.setText("x1");
-            } catch (IOException ie) {
-                ie.printStackTrace();
-                textDebug.setText("failed");
-            }
-            */
+        TextView textDebug = (TextView) findViewById(R.id.text01);
+
+        try {
+            WebSocketConnect ws = new WebSocketConnect();
+            ws.connect_to_server("RESET");
+        } catch (Exception e) {
+            textDebug.setText("WebSocketConnect failed");
+            e.printStackTrace();
+        }
+
     }
 
     public void blinkLed(View view) {
         TextView textDebug = (TextView) findViewById(R.id.text01);
-        BlinkLed sender = new BlinkLed(this, textDebug);
-        sender.execute();
 
         try {
             WebSocketConnect ws = new WebSocketConnect();
+            ws.connect_to_server("LED");
+        } catch (Exception e) {
+            textDebug.setText("WebSocketConnect failed");
+            e.printStackTrace();
+        }
+    }
+
+    public void xVal(View view) {
+        TextView textDebug = (TextView) findViewById(R.id.text01);
+
+        try {
+            XValue ws = new XValue();
+            ws.connect_to_server();
+        } catch (Exception e) {
+            textDebug.setText("WebSocketConnect failed");
+            e.printStackTrace();
+        }
+    }
+
+    public void yVal(View view) {
+        TextView textDebug = (TextView) findViewById(R.id.text01);
+        try {
+            YValue ws = new YValue();
             ws.connect_to_server();
         } catch (Exception e) {
             textDebug.setText("WebSocketConnect failed");
