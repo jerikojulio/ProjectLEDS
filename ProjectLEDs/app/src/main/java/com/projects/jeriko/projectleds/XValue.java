@@ -19,7 +19,7 @@ public class XValue {
 
     private WebSocketClient mWebSocketClient;
 
-    public void connect_to_server() {
+    public void connect_to_server(String x200) {
         URI uri;
         try {
             uri = new URI("http://10.0.0.10:81/");
