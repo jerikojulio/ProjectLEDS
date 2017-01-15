@@ -7,6 +7,10 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    int xValue;
+    int yValue;
+    int zValue;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +31,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void resetDataInternal(){
+        try {
+            WebSocketConnect ws = new WebSocketConnect();
+            ws.connect_to_server("RESET");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void blinkLed(View view) {
         TextView textDebug = (TextView) findViewById(R.id.text01);
 
@@ -38,6 +51,27 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+    public void redColor(View view){
+        TextView textDebug = (TextView) findViewById(R.id.text01);
+
+        String tempString;
+        String tempX;
+        resetDataInternal();
+
+        xValue = 255;
+        tempString = String.valueOf(xValue);
+        tempX = "x" + tempString;
+
+        try {
+            WebSocketConnect ws = new WebSocketConnect();
+            ws.connect_to_server(tempX);
+            textDebug.setText("Success");
+        } catch (Exception e) {
+            textDebug.setText("WebSocketConnect failed");
+            e.printStackTrace();
+        }
+    }
+
 
     public void xVal(View view) {
         TextView textDebug = (TextView) findViewById(R.id.text01);
