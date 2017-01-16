@@ -3,6 +3,7 @@ package com.projects.jeriko.projectleds;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,15 +32,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void resetDataInternal(){
-        try {
-            WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server("RESET");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     public void blinkLed(View view) {
         TextView textDebug = (TextView) findViewById(R.id.text01);
 
@@ -51,110 +43,58 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-    public void redColor(View view){
-/*
-        TextView textDebug = (TextView) findViewById(R.id.text01);
+    public void setColor(View view){
 
-        String tempString;
-        String tempX;
-        resetDataInternal();
-*/
-        xValue = 255;
-        yValue = 0;
-        zValue = 0;
-        parseit(xValue,yValue,zValue);
+        switch (view.getId()) {
+            case R.id.red01:
+                xValue = 255;
+                yValue = 0;
+                zValue = 0;
+                parseit(xValue,yValue,zValue);
+                break;
 
-/*  HANDLED BY NEW METHOD
-        tempString = String.valueOf(xValue);
-        tempX = "x" + tempString;
+            case R.id.red02:
+                xValue = 253;
+                yValue = 42;
+                zValue = 0;
+                parseit(xValue,yValue,zValue);
+                break;
 
-        try {
-            WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server(tempX);
-            textDebug.setText("Success");
-        } catch (Exception e) {
-            textDebug.setText("WebSocketConnect failed");
-            e.printStackTrace();
-        }
- */
-    }
+            case R.id.red03:
+                xValue = 255;
+                yValue = 68;
+                zValue = 0;
+                parseit(xValue,yValue,zValue);
+                break;
+            case R.id.red04:
+                xValue = 255;
+                yValue = 157;
+                zValue = 0;
+                parseit(xValue,yValue,zValue);
+                break;
 
+            case R.id.red05:
+                xValue = 251;
+                yValue = 255;
+                zValue = 0;
+                parseit(xValue,yValue,zValue);
+                break;
 
-    public void xVal(View view) {
-        TextView textDebug = (TextView) findViewById(R.id.text01);
+            case R.id.green01:
+                xValue = 0;
+                yValue = 148;
+                zValue = 0;
+                parseit(xValue,yValue,zValue);
+                break;
 
-        try {
-            WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server("x200");
-        } catch (Exception e) {
-            textDebug.setText("WebSocketConnect failed");
-            e.printStackTrace();
-        }
-    }
-
-    public void yVal(View view) {
-        TextView textDebug = (TextView) findViewById(R.id.text01);
-        try {
-            WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server("y200");
-        } catch (Exception e) {
-            textDebug.setText("WebSocketConnect failed");
-            e.printStackTrace();
-        }
-    }
-
-    public void zVal(View view) {
-        TextView textDebug = (TextView) findViewById(R.id.text01);
-
-        try {
-            WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server("z200");
-        } catch (Exception e) {
-            textDebug.setText("WebSocketConnect failed");
-            e.printStackTrace();
+            case R.id.green02:
+                xValue = 12;
+                yValue = 200;
+                zValue = 12;
+                parseit(xValue,yValue,zValue);
+                break;
         }
     }
-    public void apapun(View view) {
-        TextView textDebug = (TextView) findViewById(R.id.text01);
-
-        try {
-            WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server("z50");
-        } catch (Exception e) {
-            textDebug.setText("WebSocketConnect failed");
-            e.printStackTrace();
-        }
-        try {
-            WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server("y50");
-        } catch (Exception e) {
-            textDebug.setText("WebSocketConnect failed");
-            e.printStackTrace();
-        }
-        try {
-            WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server("x50");
-        } catch (Exception e) {
-            textDebug.setText("WebSocketConnect failed");
-            e.printStackTrace();
-        }
-    }
-    public void pinkColor(View view)
-    {
-        xValue =255;
-        yValue = 99;
-        zValue = 99;
-        parseit(xValue,yValue,zValue);
-    }
-
-    public void lightgreenColor(View view)
-    {
-        xValue = 80;
-        yValue = 255;
-        zValue = 80;
-        parseit(xValue,yValue,zValue);
-    }
-
 
     public void parseit (int xValue,int  yValue, int zValue)
     {

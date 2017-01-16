@@ -11,39 +11,6 @@
     tools:context="com.projects.jeriko.projectleds.MainActivity">
 
     <Button
-        android:text="Set X"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
-        android:id="@+id/button3"
-        android:layout_below="@+id/button2"
-        android:layout_alignLeft="@+id/button2"
-        android:layout_alignStart="@+id/button2"
-        android:onClick="xVal"/>
-
-    <Button
-        android:text="Set Y"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button3"
-        android:layout_alignLeft="@+id/button3"
-        android:layout_alignStart="@+id/button3"
-        android:layout_marginTop="12dp"
-        android:id="@+id/button4"
-        android:onClick="yVal"/>
-
-    <Button
-        android:text="Set Z"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:id="@+id/button5"
-        android:layout_below="@+id/button4"
-        android:layout_alignLeft="@+id/button4"
-        android:layout_alignStart="@+id/button4"
-        android:onClick="zVal"/>
-
-    <Button
         android:text="BLINK"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -53,17 +20,6 @@
         android:layout_below="@+id/button"
         android:layout_alignLeft="@+id/button"
         android:layout_alignStart="@+id/button" />
-
-    <Button
-        android:text="xiyizi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:id="@+id/button6"
-        android:layout_below="@+id/button5"
-        android:layout_alignLeft="@+id/button5"
-        android:layout_alignStart="@+id/button5"
-        android:onClick="apapun" />
 
     <Button
         android:text="RESET"
@@ -86,27 +42,14 @@
         android:layout_toLeftOf="@+id/button"
         android:layout_toStartOf="@+id/button" />
 
-    <Button
-        android:text=""
-        android:layout_height="50dp"
-        android:id="@+id/button7"
-        android:background="@drawable/circle_button"
-        android:layout_width="50dp"
-        android:onClick="redColor"
-        android:layout_below="@+id/button2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="22dp"
-        android:layout_marginStart="22dp" />
-
     <TextView
         android:text="xDebug"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/text02"
         android:layout_above="@+id/button2"
-        android:layout_alignRight="@+id/button7"
-        android:layout_alignEnd="@+id/button7" />
+        android:layout_alignRight="@+id/red01"
+        android:layout_alignEnd="@+id/red01" />
 
     <TextView
         android:text="zDebug"
@@ -130,30 +73,131 @@
         android:layout_marginEnd="19dp" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button8"
+        android:text=""
+        android:layout_height="50dp"
+        android:id="@+id/red01"
         android:background="@drawable/circle_button"
-        android:backgroundTint="#FF6363"
-        android:layout_alignBaseline="@+id/button4"
-        android:layout_alignBottom="@+id/button4"
-        android:layout_alignLeft="@+id/button7"
-        android:layout_alignStart="@+id/button7"
-        android:layout_alignRight="@+id/button7"
-        android:layout_alignEnd="@+id/button7"
-        android:onClick="pinkColor" />
+        android:layout_width="50dp"
+        android:onClick="setColor"
+        android:layout_marginLeft="21dp"
+        android:layout_marginStart="21dp"
+        android:layout_below="@+id/text02"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:backgroundTint="#ff0000" />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/red02"
+        android:background="@drawable/circle_button"
+        android:backgroundTint="#fd2a00"
+        android:onClick="setColor"
+        android:layout_below="@+id/button2"
+        android:layout_alignLeft="@+id/red01"
+        android:layout_alignStart="@+id/red01"
+        android:layout_alignRight="@+id/red01"
+        android:layout_alignEnd="@+id/red01" />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/button4"
+        android:background="@drawable/circle_button"
+        android:backgroundTint="#fd2a00"
+        android:onClick="setColor"
+        android:layout_below="@+id/button2"
+        android:layout_alignLeft="@+id/red01"
+        android:layout_alignStart="@+id/red01"
+        android:layout_alignRight="@+id/red01"
+        android:layout_alignEnd="@+id/red01" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button5"
-        android:layout_marginTop="28dp"
-        android:id="@+id/button9"
+        android:id="@+id/button3"
         android:background="@drawable/circle_button"
-        android:backgroundTint="#50ff50"
-        android:layout_alignRight="@+id/button8"
-        android:layout_alignEnd="@+id/button8"
-        android:layout_alignLeft="@+id/button8"
-        android:layout_alignStart="@+id/button8"
-        android:onClick="lightgreenColor" />
+        android:backgroundTint="#fd2a00"
+        android:onClick="setColor"
+        android:layout_below="@+id/button2"
+        android:layout_alignLeft="@+id/red01"
+        android:layout_alignStart="@+id/red01"
+        android:layout_alignRight="@+id/red01"
+        android:layout_alignEnd="@+id/red01" />
+
+    <Button
+        android:text=""
+        android:layout_height="50dp"
+        android:id="@+id/red05"
+        android:background="@drawable/circle_button"
+        android:layout_width="50dp"
+        android:backgroundTint="#fbff00"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/red04"
+        android:layout_alignLeft="@+id/red04"
+        android:layout_alignStart="@+id/red04"
+        android:onClick="setColor" />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/green01"
+        android:background="@drawable/circle_button"
+        android:backgroundTint="#009400"
+        android:layout_below="@+id/text03"
+        android:layout_alignLeft="@+id/text03"
+        android:layout_alignStart="@+id/text03"
+        android:onClick="setColor" />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/green02"
+        android:background="@drawable/circle_button"
+        android:backgroundTint="#0cc80c"
+        android:layout_alignBaseline="@+id/button4"
+        android:layout_alignBottom="@+id/button4"
+        android:layout_alignLeft="@+id/green01"
+        android:layout_alignStart="@+id/green01"
+        android:onClick="setColor" />
+
+    <Button
+        android:text=""
+        android:layout_height="50dp"
+        android:id="@+id/red03"
+        android:background="@drawable/circle_button"
+        android:layout_width="50dp"
+        android:onClick="setColor"
+        android:backgroundTint="#ff4400"
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/red02"
+        android:layout_alignLeft="@+id/red02"
+        android:layout_alignStart="@+id/red02" />
+
+    <Button
+        android:text=""
+        android:layout_height="50dp"
+        android:id="@+id/red04"
+        android:background="@drawable/circle_button"
+        android:layout_width="50dp"
+        android:backgroundTint="#ff9d00"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/red03"
+        android:layout_alignLeft="@+id/red03"
+        android:layout_alignStart="@+id/red03"
+        android:onClick="setColor" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button6"
+        android:background="@drawable/circle_button"
+        android:backgroundTint="#fd2a00"
+        android:onClick="setColor"
+        android:layout_below="@+id/button2"
+        android:layout_alignLeft="@+id/red01"
+        android:layout_alignStart="@+id/red01"
+        android:layout_alignRight="@+id/red01"
+        android:layout_alignEnd="@+id/red01" />
+
 </RelativeLayout>
