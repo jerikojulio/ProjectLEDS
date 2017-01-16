@@ -142,4 +142,18 @@
         android:layout_alignRight="@+id/button7"
         android:layout_alignEnd="@+id/button7"
         android:onClick="pinkColor" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/button5"
+        android:layout_marginTop="28dp"
+        android:id="@+id/button9"
+        android:background="@drawable/circle_button"
+        android:backgroundTint="#50ff50"
+        android:layout_alignRight="@+id/button8"
+        android:layout_alignEnd="@+id/button8"
+        android:layout_alignLeft="@+id/button8"
+        android:layout_alignStart="@+id/button8"
+        android:onClick="lighgreenColor" />
 </RelativeLayout>

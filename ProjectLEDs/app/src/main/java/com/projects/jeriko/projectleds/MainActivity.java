@@ -147,6 +147,14 @@ public class MainActivity extends AppCompatActivity {
         parseit(xValue,yValue,zValue);
     }
 
+    public void lightgreenColor(View view)
+    {
+        xValue = 80;
+        yValue = 255;
+        zValue = 80;
+        parseit(xValue,yValue,zValue);
+    }
+
 
     public void parseit (int xValue,int  yValue, int zValue)
     {
