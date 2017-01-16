@@ -155,5 +155,5 @@
         android:layout_alignEnd="@+id/button8"
         android:layout_alignLeft="@+id/button8"
         android:layout_alignStart="@+id/button8"
-        android:onClick="lighgreenColor" />
+        android:onClick="lightgreenColor" />
 </RelativeLayout>
