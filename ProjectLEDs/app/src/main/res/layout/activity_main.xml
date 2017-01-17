@@ -31,61 +31,6 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:id="@+id/text01"
-        android:layout_marginRight="14dp"
-        android:layout_marginEnd="14dp"
-        android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/button"
-        android:layout_toStartOf="@+id/button" />
-
-    <TextView
-        android:text="xDebug"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/text02"
-        android:layout_above="@+id/button2"
-        android:layout_alignRight="@+id/red01"
-        android:layout_alignEnd="@+id/red01" />
-
-    <TextView
-        android:text="zDebug"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/text04"
-        android:layout_above="@+id/button2"
-        android:layout_alignLeft="@+id/text01"
-        android:layout_alignStart="@+id/text01" />
-
-    <TextView
-        android:text="yDebug"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/text03"
-        android:layout_alignBaseline="@+id/text04"
-        android:layout_alignBottom="@+id/text04"
-        android:layout_toLeftOf="@+id/text04"
-        android:layout_toStartOf="@+id/text04"
-        android:layout_marginRight="19dp"
-        android:layout_marginEnd="19dp" />
-
-    <Button
-        android:text=""
-        android:layout_height="50dp"
-        android:id="@+id/red01"
-        android:background="@drawable/circle_button"
-        android:layout_width="50dp"
-        android:onClick="setColor"
-        android:layout_marginLeft="21dp"
-        android:layout_marginStart="21dp"
-        android:layout_below="@+id/text02"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:backgroundTint="#ff0000" />
-
     <Button
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -141,17 +86,6 @@
     <Button
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:id="@+id/green01"
-        android:background="@drawable/circle_button"
-        android:backgroundTint="#009400"
-        android:layout_below="@+id/text03"
-        android:layout_alignLeft="@+id/text03"
-        android:layout_alignStart="@+id/text03"
-        android:onClick="setColor" />
-
-    <Button
-        android:layout_width="50dp"
-        android:layout_height="50dp"
         android:id="@+id/green02"
         android:background="@drawable/circle_button"
         android:backgroundTint="#0cc80c"
@@ -190,7 +124,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button6"
+        android:id="@+id/red02"
         android:background="@drawable/circle_button"
         android:backgroundTint="#fd2a00"
         android:onClick="setColor"
@@ -199,5 +133,72 @@
         android:layout_alignStart="@+id/red01"
         android:layout_alignRight="@+id/red01"
         android:layout_alignEnd="@+id/red01" />
+
+    <TextView
+        android:text="xDebug"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text02"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/red01"
+        android:layout_alignEnd="@+id/red01" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:id="@+id/text01"
+        android:layout_alignBaseline="@+id/button4"
+        android:layout_alignBottom="@+id/button4"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="yDebug"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text03"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/green01"
+        android:layout_alignStart="@+id/green01" />
+
+    <Button
+        android:text=""
+        android:layout_height="50dp"
+        android:id="@+id/red01"
+        android:background="@drawable/circle_button"
+        android:layout_width="50dp"
+        android:onClick="setColor"
+        android:layout_marginLeft="22dp"
+        android:layout_marginStart="22dp"
+        android:backgroundTint="#ff0000"
+        android:layout_below="@+id/button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/green01"
+        android:background="@drawable/circle_button"
+        android:backgroundTint="#009400"
+        android:onClick="setColor"
+        android:layout_marginLeft="29dp"
+        android:layout_marginStart="29dp"
+        android:layout_alignBaseline="@+id/red01"
+        android:layout_alignBottom="@+id/red01"
+        android:layout_toRightOf="@+id/red01"
+        android:layout_toEndOf="@+id/red01" />
+
+    <TextView
+        android:text="zDebug"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text04"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/text03"
+        android:layout_toEndOf="@+id/text03"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp" />
 
 </RelativeLayout>
