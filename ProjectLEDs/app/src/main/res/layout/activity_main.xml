@@ -268,31 +268,27 @@
         android:onClick="setColor" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/bplus"
-        android:layout_alignStart="@+id/bplus"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/bminus"
-        android:layout_alignRight="@+id/bplus"
-        android:layout_alignEnd="@+id/bplus"
         android:background="@drawable/circle_button"
         android:backgroundTint="#0000ff"
         android:text="B-"
-        android:onClick="setColor" />
+        android:onClick="setColor"
+        android:layout_alignTop="@+id/gminus"
+        android:layout_alignLeft="@+id/text04"
+        android:layout_alignStart="@+id/text04" />
 
     <Button
         android:text="B+"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:id="@+id/bplus"
-        android:layout_alignTop="@+id/gplus"
-        android:layout_alignLeft="@+id/text04"
-        android:layout_alignStart="@+id/text04"
         android:background="@drawable/circle_button"
-        android:layout_alignRight="@+id/text04"
-        android:layout_alignEnd="@+id/text04"
         android:backgroundTint="#0000ff"
-        android:onClick="setColor" />
+        android:onClick="setColor"
+        android:layout_alignTop="@+id/gplus"
+        android:layout_alignLeft="@+id/bminus"
+        android:layout_alignStart="@+id/bminus" />
 
 </RelativeLayout>
