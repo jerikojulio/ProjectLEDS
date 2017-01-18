@@ -167,7 +167,6 @@ public class MainActivity extends AppCompatActivity {
                 }
                 parseit(xValue,yValue,zValue);
                 break;
-
         }
     }
 

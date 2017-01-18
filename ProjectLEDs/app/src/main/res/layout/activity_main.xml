@@ -41,8 +41,8 @@
         android:layout_alignStart="@+id/green01" />
 
     <Button
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:id="@+id/green02"
         android:background="@drawable/circle_button"
         android:backgroundTint="#0cc80c"
@@ -50,12 +50,12 @@
         android:layout_alignTop="@+id/red02"
         android:layout_toRightOf="@+id/red02"
         android:layout_toEndOf="@+id/red02"
-        android:layout_marginLeft="30dp"
-        android:layout_marginStart="30dp" />
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp" />
 
     <Button
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:id="@+id/green01"
         android:background="@drawable/circle_button"
         android:backgroundTint="#00b000"
@@ -69,10 +69,10 @@
 
     <Button
         android:text=""
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:id="@+id/red04"
         android:background="@drawable/circle_button"
-        android:layout_width="50dp"
+        android:layout_width="40dp"
         android:backgroundTint="#ff9d00"
         android:layout_marginTop="20dp"
         android:onClick="setColor"
@@ -82,26 +82,16 @@
 
     <Button
         android:text=""
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:id="@+id/red03"
         android:background="@drawable/circle_button"
-        android:layout_width="50dp"
+        android:layout_width="40dp"
         android:onClick="setColor"
         android:backgroundTint="#ff4400"
         android:layout_below="@+id/green02"
         android:layout_alignLeft="@+id/red02"
         android:layout_alignStart="@+id/red02"
         android:layout_marginTop="13dp" />
-
-    <Button
-        android:text="BLINK"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button2"
-        android:onClick="blinkLed"
-        android:layout_below="@+id/green01"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
 
     <Button
         android:text="RESET"
@@ -115,8 +105,8 @@
         android:layout_marginTop="16dp" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:id="@+id/red02"
         android:background="@drawable/circle_button"
         android:backgroundTint="#fd2a00"
@@ -130,10 +120,10 @@
 
     <Button
         android:text=""
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:id="@+id/red01"
         android:background="@drawable/circle_button"
-        android:layout_width="50dp"
+        android:layout_width="40dp"
         android:onClick="setColor"
         android:layout_marginLeft="28dp"
         android:layout_marginStart="28dp"
@@ -144,10 +134,10 @@
 
     <Button
         android:text=""
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:id="@+id/red05"
         android:background="@drawable/circle_button"
-        android:layout_width="50dp"
+        android:layout_width="40dp"
         android:backgroundTint="#fbff00"
         android:onClick="setColor"
         android:layout_below="@+id/red04"
@@ -157,8 +147,8 @@
 
     <Button
         android:text="R+"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:id="@+id/rplus"
         android:background="@drawable/circle_button"
         android:backgroundTint="#ff0000"
@@ -171,8 +161,8 @@
         android:onClick="setColor" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignBottom="@+id/red03"
         android:id="@+id/green03"
         android:layout_alignLeft="@+id/green02"
@@ -185,8 +175,8 @@
         android:onClick="setColor" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignTop="@+id/red04"
         android:layout_alignLeft="@+id/green03"
         android:layout_alignStart="@+id/green03"
@@ -211,8 +201,8 @@
 
     <Button
         android:text="G+"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignTop="@+id/rplus"
         android:layout_alignLeft="@+id/green05"
         android:layout_alignStart="@+id/green05"
@@ -226,8 +216,8 @@
 
     <Button
         android:text="R-"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:id="@+id/rminus"
         android:background="@drawable/circle_button"
         android:backgroundTint="#ff0000"
@@ -240,8 +230,8 @@
         android:onClick="setColor" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/gplus"
         android:layout_alignStart="@+id/gplus"
@@ -254,8 +244,8 @@
         android:onClick="setColor" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:id="@+id/green05"
         android:background="@drawable/circle_button"
         android:backgroundTint="#003000"
@@ -268,8 +258,8 @@
         android:onClick="setColor" />
 
     <Button
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:id="@+id/bminus"
         android:background="@drawable/circle_button"
         android:backgroundTint="#0000ff"
@@ -281,8 +271,8 @@
 
     <Button
         android:text="B+"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:id="@+id/bplus"
         android:background="@drawable/circle_button"
         android:backgroundTint="#0000ff"
@@ -290,5 +280,15 @@
         android:layout_alignTop="@+id/gplus"
         android:layout_alignLeft="@+id/bminus"
         android:layout_alignStart="@+id/bminus" />
+
+    <Button
+        android:text="BLINK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button2"
+        android:onClick="blinkLed"
+        android:layout_alignTop="@+id/green02"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
