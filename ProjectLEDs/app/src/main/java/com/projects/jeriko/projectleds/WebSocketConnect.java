@@ -37,6 +37,7 @@ public class WebSocketConnect {
             public void onOpen(ServerHandshake serverHandshake) {
                 Log.i("Websocket", "Opened");
                 mWebSocketClient.send(color);
+                mWebSocketClient.close();
             }
 
             @Override

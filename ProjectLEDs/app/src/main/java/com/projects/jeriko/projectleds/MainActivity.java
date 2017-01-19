@@ -242,7 +242,7 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId())
         {
             case R.id.brightUp:
-               brValue = brValue+10;
+               brValue = brValue+50;
                 if (brValue>=100)
                 {
                     brValue=100;
@@ -250,7 +250,7 @@ public class MainActivity extends AppCompatActivity {
                 parseit(xValue,yValue,zValue);
              break;
             case R.id.brightDown:
-                brValue = brValue-10;
+                brValue = brValue-50;
                 if (brValue<=00)
                 {
                     brValue=00;
@@ -283,6 +283,7 @@ public class MainActivity extends AppCompatActivity {
             ws.connect_to_server(tempX);
             textDebug.setText("Success");
             rDebug.setText(Integer.toString(xValue));
+
         }
         catch (Exception e)
         {
