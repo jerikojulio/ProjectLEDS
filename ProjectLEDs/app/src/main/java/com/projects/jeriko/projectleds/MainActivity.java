@@ -10,6 +10,8 @@ public class MainActivity extends AppCompatActivity {
     int xValue;
     int yValue;
     int zValue;
+    int brValue = 100;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,6 +116,71 @@ public class MainActivity extends AppCompatActivity {
                 parseit(xValue,yValue,zValue);
                 break;
 
+            case R.id.blue01:
+                xValue = 0x00;
+                yValue = 0x00;
+                zValue = 0x50;
+                parseit(xValue,yValue,zValue);
+                break;
+            case R.id.blue02:
+                xValue = 0x00;
+                yValue = 0x00;
+                zValue = 0xff;
+                parseit(xValue,yValue,zValue);
+                break;
+
+            case R.id.blue03:
+                xValue = 0x50;
+                yValue = 0x50;
+                zValue = 0xff;
+                parseit(xValue,yValue,zValue);
+                break;
+
+            case R.id.blue04:
+                xValue = 0x00;
+                yValue = 0x50;
+                zValue = 0x50;
+                parseit(xValue,yValue,zValue);
+                break;
+
+            case R.id.blue05:
+                xValue = 0x80;
+                yValue = 0x00;
+                zValue = 0x50;
+                parseit(xValue,yValue,zValue);
+                break;
+
+            case R.id.white01:
+                xValue = 0xff;
+                yValue = 0xff;
+                zValue = 0xff;
+                parseit(xValue,yValue,zValue);
+                break;
+            case R.id.white02:
+                xValue = 0xff;
+                yValue = 0x80;
+                zValue = 0x80;
+                parseit(xValue,yValue,zValue);
+                break;
+            case R.id.white03:
+                xValue = 0xff;
+                yValue = 0x50;
+                zValue = 0x50;
+                parseit(xValue,yValue,zValue);
+                break;
+            case R.id.white04:
+                xValue = 0x80;
+                yValue = 0x80;
+                zValue = 0xff;
+                parseit(xValue,yValue,zValue);
+                break;
+            case R.id.white05:
+                xValue = 0x20;
+                yValue = 0x20;
+                zValue = 0x80;
+                parseit(xValue,yValue,zValue);
+                break;
+
             case R.id.rplus:
                 xValue = xValue+8;
                 if (xValue>=0xff)
@@ -170,29 +237,52 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void brightness(View view)
+    {
+        switch (view.getId())
+        {
+            case R.id.brightUp:
+               brValue = brValue+10;
+                if (brValue>=100)
+                {
+                    brValue=100;
+                }
+                parseit(xValue,yValue,zValue);
+             break;
+            case R.id.brightDown:
+                brValue = brValue-10;
+                if (brValue<=00)
+                {
+                    brValue=00;
+                }
+                parseit(xValue,yValue,zValue);
+                break;
+        }
+    }
     public void parseit (int xValue,int  yValue, int zValue)
     {
         String tempString;
         String tempX;
         String tempY;
         String tempZ;
+        TextView bright = (TextView) findViewById(R.id.brtext);
         TextView textDebug = (TextView) findViewById(R.id.text01);
         TextView rDebug = (TextView) findViewById(R.id.text02);
         TextView gDebug = (TextView) findViewById(R.id.text03);
         TextView bDebug = (TextView) findViewById(R.id.text04);
-        tempString = String.valueOf(xValue);
+        tempString = String.valueOf(xValue*brValue/100);
         tempX = "x" + tempString;
         tempString = String.valueOf(yValue);
         tempY = "y" + tempString;
         tempString = String.valueOf(zValue);
         tempZ = "z" + tempString;
-
+        bright.setText(Integer.toString(brValue));
         try
         {
             WebSocketConnect ws = new WebSocketConnect();
             ws.connect_to_server(tempX);
             textDebug.setText("Success");
-            rDebug.setText(tempX);
+            rDebug.setText(Integer.toString(xValue));
         }
         catch (Exception e)
         {
@@ -205,7 +295,7 @@ public class MainActivity extends AppCompatActivity {
             WebSocketConnect ws = new WebSocketConnect();
             ws.connect_to_server(tempY);
             textDebug.setText("Success");
-            gDebug.setText(tempY);
+            gDebug.setText(Integer.toString(yValue));
         }
         catch (Exception e)
         {
@@ -218,7 +308,7 @@ public class MainActivity extends AppCompatActivity {
             WebSocketConnect ws = new WebSocketConnect();
             ws.connect_to_server(tempZ);
             textDebug.setText("Success");
-            bDebug.setText(tempZ);
+            bDebug.setText(Integer.toString(zValue));
         }
         catch (Exception e)
         {
