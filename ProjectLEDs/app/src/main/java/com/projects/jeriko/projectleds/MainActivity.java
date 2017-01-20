@@ -272,9 +272,9 @@ public class MainActivity extends AppCompatActivity {
         TextView bDebug = (TextView) findViewById(R.id.text04);
         tempString = String.valueOf(xValue*brValue/100);
         tempX = "x" + tempString;
-        tempString = String.valueOf(yValue);
+        tempString = String.valueOf(yValue*brValue/100);
         tempY = "y" + tempString;
-        tempString = String.valueOf(zValue);
+        tempString = String.valueOf(zValue*brValue/100);
         tempZ = "z" + tempString;
         bright.setText(Integer.toString(brValue));
         try

@@ -54,6 +54,8 @@ public class WebSocketConnect {
             public void onError(Exception e) {
                 Log.i("Websocket", "Error " + e.getMessage());
             }
+
+
         };
         mWebSocketClient.connect();
     }
