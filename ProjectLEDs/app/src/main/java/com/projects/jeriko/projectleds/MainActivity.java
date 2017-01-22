@@ -11,11 +11,21 @@ public class MainActivity extends AppCompatActivity {
     int xValue;
     int yValue;
     int zValue;
+
+    private TextView bright;
+    private TextView textDebug;
+    private TextView rDebug;
+    private TextView gDebug;
+    private TextView bDebug;
+
+    /*
     TextView bright = (TextView) findViewById(R.id.brtext);
     TextView textDebug = (TextView) findViewById(R.id.text01);
     TextView rDebug = (TextView) findViewById(R.id.text02);
     TextView gDebug = (TextView) findViewById(R.id.text03);
     TextView bDebug = (TextView) findViewById(R.id.text04);
+    */
+
     int brValue = 100;
     String cepat;
 
@@ -23,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        bright = (TextView) findViewById(R.id.brtext);
+        textDebug = (TextView) findViewById(R.id.text01);
+        rDebug = (TextView) findViewById(R.id.text02);
+        gDebug = (TextView) findViewById(R.id.text03);
+        bDebug = (TextView) findViewById(R.id.text04);
     }
 
     public void resetData(View view) {
