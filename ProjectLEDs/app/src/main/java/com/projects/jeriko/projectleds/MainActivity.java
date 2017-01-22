@@ -11,6 +11,11 @@ public class MainActivity extends AppCompatActivity {
     int xValue;
     int yValue;
     int zValue;
+    TextView bright = (TextView) findViewById(R.id.brtext);
+    TextView textDebug = (TextView) findViewById(R.id.text01);
+    TextView rDebug = (TextView) findViewById(R.id.text02);
+    TextView gDebug = (TextView) findViewById(R.id.text03);
+    TextView bDebug = (TextView) findViewById(R.id.text04);
     int brValue = 100;
     String cepat;
 
@@ -27,6 +32,11 @@ public class MainActivity extends AppCompatActivity {
         try {
             WebSocketConnect ws = new WebSocketConnect();
             ws.connect_to_server("RESET");
+            rDebug.setText("0");
+            gDebug.setText("0");
+            bDebug.setText("0");
+            brValue = 100;
+            bright.setText(Integer.toString(brValue));
         } catch (Exception e) {
             textDebug.setText("WebSocketConnect failed");
             e.printStackTrace();
@@ -53,18 +63,19 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server("RAINBOW");
+            ws.connect_to_server("t"+cepat);
         } catch (Exception e) {
             textDebug.setText("WebSocketConnect failed");
             e.printStackTrace();
         }
         try {
             WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server("t"+cepat);
+            ws.connect_to_server("RAINBOW");
         } catch (Exception e) {
             textDebug.setText("WebSocketConnect failed");
             e.printStackTrace();
         }
+
     }
     public void setColor(View view){
 
@@ -288,11 +299,7 @@ public class MainActivity extends AppCompatActivity {
         String tempX;
         String tempY;
         String tempZ;
-        TextView bright = (TextView) findViewById(R.id.brtext);
-        TextView textDebug = (TextView) findViewById(R.id.text01);
-        TextView rDebug = (TextView) findViewById(R.id.text02);
-        TextView gDebug = (TextView) findViewById(R.id.text03);
-        TextView bDebug = (TextView) findViewById(R.id.text04);
+
         tempString = String.valueOf(xValue*brValue/100);
         tempX = "x" + tempString;
         tempString = String.valueOf(yValue*brValue/100);

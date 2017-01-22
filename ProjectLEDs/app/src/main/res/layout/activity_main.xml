@@ -11,15 +11,6 @@
     tools:context="com.projects.jeriko.projectleds.MainActivity">
 
     <TextView
-        android:text="xDebug"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/text02"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/red01"
-        android:layout_alignEnd="@+id/red01" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
@@ -31,8 +22,8 @@
 
     <TextView
         android:text="yDebug"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
         android:id="@+id/text03"
         android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/green01"
@@ -148,8 +139,8 @@
 
     <TextView
         android:text="zDebug"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
         android:id="@+id/text04"
         android:layout_marginLeft="28dp"
         android:layout_marginStart="28dp"
@@ -472,7 +463,7 @@
 
     <TextView
         android:text="Brightness Debug"
-        android:layout_width="100dp"
+        android:layout_width="120dp"
         android:layout_height="50dp"
         android:id="@+id/brtext"
         android:fontFamily="monospace"
@@ -503,6 +494,15 @@
         android:layout_alignLeft="@+id/brightUp"
         android:layout_alignStart="@+id/brightUp"
         android:onClick="rainBow" />
+
+    <TextView
+        android:text="xDebug"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:id="@+id/text02"
+        android:layout_above="@+id/red01"
+        android:layout_alignRight="@+id/red01"
+        android:layout_alignEnd="@+id/red01" />
 
 
 </RelativeLayout>
