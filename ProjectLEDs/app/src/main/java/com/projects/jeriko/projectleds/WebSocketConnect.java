@@ -1,6 +1,7 @@
 package com.projects.jeriko.projectleds;
 
 import android.util.Log;
+import android.widget.TextView;
 
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.drafts.Draft_17;
@@ -19,9 +20,12 @@ public class WebSocketConnect {
 
     private WebSocketClient mWebSocketClient;
 
-    public void connect_to_server(String inputColor) {
+    public void connect_to_server(String inputColor, TextView messageDisplayer) {
         final String color;
+        final TextView localMessageDisplayer;
         color = inputColor;
+        localMessageDisplayer = messageDisplayer;
+
         URI uri;
         try {
             uri = new URI("http://10.0.0.10:81/");
@@ -37,12 +41,19 @@ public class WebSocketConnect {
             public void onOpen(ServerHandshake serverHandshake) {
                 Log.i("Websocket", "Opened");
                 mWebSocketClient.send(color);
-                mWebSocketClient.close();
+                // mWebSocketClient.close();
             }
 
             @Override
             public void onMessage(String s) {
+                final String message = s;
                 Log.i("Websocket", "onMessage" + s);
+                localMessageDisplayer.setText(message);
+                try {
+                    mWebSocketClient.close();
+                } catch (Exception e) {
+                    localMessageDisplayer.setText(e.toString());
+                }
             }
 
             @Override
@@ -54,8 +65,6 @@ public class WebSocketConnect {
             public void onError(Exception e) {
                 Log.i("Websocket", "Error " + e.getMessage());
             }
-
-
         };
         mWebSocketClient.connect();
     }

@@ -32,19 +32,6 @@
     <Button
         android:text=""
         android:layout_height="40dp"
-        android:id="@+id/red04"
-        android:background="@drawable/circle_button"
-        android:layout_width="40dp"
-        android:backgroundTint="#ff9d00"
-        android:layout_marginTop="20dp"
-        android:onClick="setColor"
-        android:layout_below="@+id/red03"
-        android:layout_alignLeft="@+id/red03"
-        android:layout_alignStart="@+id/red03" />
-
-    <Button
-        android:text=""
-        android:layout_height="40dp"
         android:id="@+id/red03"
         android:background="@drawable/circle_button"
         android:layout_width="40dp"
@@ -79,20 +66,6 @@
         android:layout_alignStart="@+id/red01"
         android:layout_alignRight="@+id/red01"
         android:layout_alignEnd="@+id/red01" />
-
-    <Button
-        android:text=""
-        android:layout_height="40dp"
-        android:id="@+id/red01"
-        android:background="@drawable/circle_button"
-        android:layout_width="40dp"
-        android:onClick="setColor"
-        android:layout_marginLeft="28dp"
-        android:layout_marginStart="28dp"
-        android:backgroundTint="#ff0000"
-        android:layout_alignTop="@+id/button"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
     <Button
         android:text="R+"
@@ -264,19 +237,6 @@
     <Button
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:background="@drawable/circle_button"
-        android:id="@+id/white01"
-        android:layout_alignTop="@+id/button"
-        android:layout_toRightOf="@+id/text04"
-        android:layout_toEndOf="@+id/text04"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp"
-        android:backgroundTint="#ffffff"
-        android:onClick="setColor"/>
-
-    <Button
-        android:layout_width="40dp"
-        android:layout_height="40dp"
         android:id="@+id/blue04"
         android:background="@drawable/circle_button"
         android:layout_alignBaseline="@+id/green04"
@@ -299,17 +259,6 @@
         android:layout_alignBottom="@+id/red02"
         android:layout_toRightOf="@+id/red02"
         android:layout_toEndOf="@+id/red02" />
-
-    <Button
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:id="@+id/white03"
-        android:background="@drawable/circle_button"
-        android:layout_alignTop="@+id/blue03"
-        android:layout_alignLeft="@+id/white02"
-        android:layout_alignStart="@+id/white02"
-        android:backgroundTint="#ff5050"
-        android:onClick="setColor"/>
 
     <Button
         android:layout_width="40dp"
@@ -430,71 +379,6 @@
         android:layout_alignLeft="@+id/green04"
         android:layout_alignStart="@+id/green04" />
 
-    <Button
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:id="@+id/white02"
-        android:background="@drawable/circle_button"
-        android:backgroundTint="#ff8080"
-        android:layout_alignBaseline="@+id/red02"
-        android:layout_alignBottom="@+id/red02"
-        android:layout_alignLeft="@+id/white01"
-        android:layout_alignStart="@+id/white01"
-        android:onClick="setColor"/>
-
-    <Button
-        android:text="Brightnes -"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:id="@+id/brightDown"
-        android:onClick="brightness"
-        android:layout_alignBottom="@+id/bplus"
-        android:layout_alignRight="@+id/brightUp"
-        android:layout_alignEnd="@+id/brightUp" />
-
-    <Button
-        android:text="Brightnes +"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:id="@+id/brightUp"
-        android:onClick="brightness"
-        android:layout_above="@+id/brightDown"
-        android:layout_toEndOf="@+id/white05" />
-
-    <TextView
-        android:text="Brightness Debug"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:id="@+id/brtext"
-        android:fontFamily="monospace"
-        android:textSize="18sp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/brightDown"
-        android:layout_alignStart="@+id/brightDown" />
-
-    <EditText
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:inputType="number"
-        android:text="50"
-        android:ems="10"
-        android:id="@+id/editTime"
-        android:layout_above="@+id/brightUp"
-        android:layout_toLeftOf="@+id/RAINBOW"
-        android:layout_toStartOf="@+id/RAINBOW"
-        android:layout_marginBottom="12dp" />
-
-    <Button
-        android:text="RAINBOW"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:id="@+id/RAINBOW"
-        android:layout_alignBaseline="@+id/editTime"
-        android:layout_alignBottom="@+id/editTime"
-        android:layout_alignLeft="@+id/brightUp"
-        android:layout_alignStart="@+id/brightUp"
-        android:onClick="rainBow" />
-
     <TextView
         android:text="xDebug"
         android:layout_width="50dp"
@@ -503,6 +387,122 @@
         android:layout_above="@+id/red01"
         android:layout_alignRight="@+id/red01"
         android:layout_alignEnd="@+id/red01" />
+
+    <Button
+        android:text=""
+        android:layout_height="40dp"
+        android:id="@+id/red01"
+        android:background="@drawable/circle_button"
+        android:layout_width="40dp"
+        android:onClick="setColor"
+        android:backgroundTint="#ff0000"
+        android:layout_below="@+id/text03"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/circle_button"
+        android:id="@+id/white01"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:backgroundTint="#ffffff"
+        android:onClick="setColor"
+        android:layout_alignTop="@+id/button"
+        android:layout_toRightOf="@+id/text04"
+        android:layout_toEndOf="@+id/text04" />
+
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/white03"
+        android:background="@drawable/circle_button"
+        android:backgroundTint="#ff5050"
+        android:onClick="setColor"
+        android:layout_alignBaseline="@+id/blue03"
+        android:layout_alignBottom="@+id/blue03"
+        android:layout_alignLeft="@+id/white02"
+        android:layout_alignStart="@+id/white02" />
+
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/white02"
+        android:background="@drawable/circle_button"
+        android:backgroundTint="#ff8080"
+        android:onClick="setColor"
+        android:layout_alignBaseline="@+id/blue02"
+        android:layout_alignBottom="@+id/blue02"
+        android:layout_alignLeft="@+id/white01"
+        android:layout_alignStart="@+id/white01" />
+
+    <Button
+        android:text=""
+        android:layout_height="40dp"
+        android:id="@+id/red04"
+        android:background="@drawable/circle_button"
+        android:layout_width="40dp"
+        android:backgroundTint="#ff9d00"
+        android:layout_marginTop="12dp"
+        android:onClick="setColor"
+        android:layout_below="@+id/red03"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:inputType="number"
+        android:text="50"
+        android:ems="10"
+        android:id="@+id/editTime"
+        android:layout_above="@+id/white05"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="RAINBOW"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:id="@+id/RAINBOW"
+        android:onClick="rainBow"
+        android:layout_alignTop="@+id/red05"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Brightnes +"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:id="@+id/brightUp"
+        android:onClick="brightness"
+        android:layout_below="@+id/RAINBOW"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="11dp" />
+
+    <Button
+        android:text="Brightnes -"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:id="@+id/brightDown"
+        android:onClick="brightness"
+        android:layout_below="@+id/brightUp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Brightness Debug"
+        android:layout_height="50dp"
+        android:id="@+id/brtext"
+        android:fontFamily="monospace"
+        android:textSize="18sp"
+        android:layout_alignBaseline="@+id/blue03"
+        android:layout_alignBottom="@+id/blue03"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_width="100dp" />
 
 
 </RelativeLayout>

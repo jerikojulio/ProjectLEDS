@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server("RESET");
+            ws.connect_to_server("RESET", bright);
             rDebug.setText("0");
             gDebug.setText("0");
             bDebug.setText("0");
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server("LED");
+            ws.connect_to_server("LED", bright);
         } catch (Exception e) {
             textDebug.setText("WebSocketConnect failed");
             e.printStackTrace();
@@ -77,16 +77,19 @@ public class MainActivity extends AppCompatActivity {
         EditText cepaT = (EditText) findViewById(R.id.editTime);
         cepat = cepaT.getText().toString();
 
+        bright.setText(cepat);
+
         try {
             WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server("t"+cepat);
+            ws.connect_to_server("t"+cepat, bright);
         } catch (Exception e) {
             textDebug.setText("WebSocketConnect failed");
             e.printStackTrace();
         }
+
         try {
             WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server("RAINBOW");
+            ws.connect_to_server("RAINBOW", bright);
         } catch (Exception e) {
             textDebug.setText("WebSocketConnect failed");
             e.printStackTrace();
@@ -322,14 +325,12 @@ public class MainActivity extends AppCompatActivity {
         tempY = "y" + tempString;
         tempString = String.valueOf(zValue*brValue/100);
         tempZ = "z" + tempString;
-        bright.setText(Integer.toString(brValue));
         try
         {
             WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server(tempX);
+            ws.connect_to_server(tempX, bright);
             textDebug.setText("Success");
             rDebug.setText(Integer.toString(xValue));
-
         }
         catch (Exception e)
         {
@@ -340,7 +341,7 @@ public class MainActivity extends AppCompatActivity {
         try
         {
             WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server(tempY);
+            ws.connect_to_server(tempY, bright);
             textDebug.setText("Success");
             gDebug.setText(Integer.toString(yValue));
         }
@@ -353,7 +354,7 @@ public class MainActivity extends AppCompatActivity {
         try
         {
             WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server(tempZ);
+            ws.connect_to_server(tempZ, bright);
             textDebug.setText("Success");
             bDebug.setText(Integer.toString(zValue));
         }
