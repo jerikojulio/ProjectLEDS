@@ -452,40 +452,57 @@
         android:onClick="setColor"/>
 
     <Button
-        android:text="Brightnes +"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/red05"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="11dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginTop="33dp"
-        android:id="@+id/brightUp"
-        android:onClick="brightness" />
+        android:text="Brightnes -"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:id="@+id/brightDown"
+        android:onClick="brightness"
+        android:layout_alignBottom="@+id/bplus"
+        android:layout_alignRight="@+id/brightUp"
+        android:layout_alignEnd="@+id/brightUp" />
 
     <Button
-        android:text="Brightnes -"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/brightUp"
-        android:layout_alignRight="@+id/brightUp"
-        android:layout_alignEnd="@+id/brightUp"
-        android:layout_marginTop="16dp"
-        android:id="@+id/brightDown"
-        android:onClick="brightness" />
+        android:text="Brightnes +"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:id="@+id/brightUp"
+        android:onClick="brightness"
+        android:layout_above="@+id/brightDown"
+        android:layout_toEndOf="@+id/white05" />
 
     <TextView
         android:text="Brightness Debug"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/brightDown"
-        android:layout_marginTop="25dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:id="@+id/brtext"
         android:fontFamily="monospace"
         android:textSize="18sp"
+        android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/brightDown"
         android:layout_alignStart="@+id/brightDown" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:inputType="number"
+        android:text="50"
+        android:ems="10"
+        android:id="@+id/editTime"
+        android:layout_above="@+id/brightUp"
+        android:layout_toLeftOf="@+id/RAINBOW"
+        android:layout_toStartOf="@+id/RAINBOW"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:text="RAINBOW"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:id="@+id/RAINBOW"
+        android:layout_alignBaseline="@+id/editTime"
+        android:layout_alignBottom="@+id/editTime"
+        android:layout_alignLeft="@+id/brightUp"
+        android:layout_alignStart="@+id/brightUp"
+        android:onClick="rainBow" />
 
 
 </RelativeLayout>

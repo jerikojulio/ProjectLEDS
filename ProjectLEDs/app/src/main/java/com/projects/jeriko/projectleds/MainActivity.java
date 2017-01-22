@@ -3,6 +3,7 @@ package com.projects.jeriko.projectleds;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -11,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     int yValue;
     int zValue;
     int brValue = 100;
-
+    String cepat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +45,31 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+    public void rainBow(View view) {
+        TextView textDebug = (TextView) findViewById(R.id.text01);
+        EditText cepaT = (EditText) findViewById(R.id.editTime);
+        cepat = cepaT.getText().toString();
+
+        try {
+            WebSocketConnect ws = new WebSocketConnect();
+            ws.connect_to_server("RAINBOW");
+        } catch (Exception e) {
+            textDebug.setText("WebSocketConnect failed");
+            e.printStackTrace();
+        }
+        try {
+            WebSocketConnect ws = new WebSocketConnect();
+            ws.connect_to_server("t"+cepat);
+        } catch (Exception e) {
+            textDebug.setText("WebSocketConnect failed");
+            e.printStackTrace();
+        }
+    }
     public void setColor(View view){
 
         switch (view.getId()) {
+
             case R.id.red01:
                 xValue = 0xff;
                 yValue = 0;
