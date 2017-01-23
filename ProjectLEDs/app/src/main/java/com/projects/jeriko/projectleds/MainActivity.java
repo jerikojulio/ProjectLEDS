@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView gDebug;
     private TextView bDebug;
 
+    private View mainActivityView;
+
     /*
     TextView bright = (TextView) findViewById(R.id.brtext);
     TextView textDebug = (TextView) findViewById(R.id.text01);
@@ -35,19 +37,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         bright = (TextView) findViewById(R.id.brtext);
-        textDebug = (TextView) findViewById(R.id.text01);
+        textDebug = (TextView) findViewById(R.id.receiveText);
         rDebug = (TextView) findViewById(R.id.text02);
         gDebug = (TextView) findViewById(R.id.text03);
         bDebug = (TextView) findViewById(R.id.text04);
+
+        mainActivityView = getWindow().getDecorView().getRootView();
     }
 
     public void resetData(View view) {
 
-        TextView textDebug = (TextView) findViewById(R.id.text01);
-
         try {
             WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server("RESET", bright);
+            ws.connect_to_server("RESET", mainActivityView);
             rDebug.setText("0");
             gDebug.setText("0");
             bDebug.setText("0");
@@ -61,11 +63,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void blinkLed(View view) {
-        TextView textDebug = (TextView) findViewById(R.id.text01);
 
         try {
             WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server("LED", bright);
+            ws.connect_to_server("LED", mainActivityView);
         } catch (Exception e) {
             textDebug.setText("WebSocketConnect failed");
             e.printStackTrace();
@@ -73,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void rainBow(View view) {
-        TextView textDebug = (TextView) findViewById(R.id.text01);
         EditText cepaT = (EditText) findViewById(R.id.editTime);
         cepat = cepaT.getText().toString();
 
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server("t"+cepat, bright);
+            ws.connect_to_server("t"+cepat, mainActivityView);
         } catch (Exception e) {
             textDebug.setText("WebSocketConnect failed");
             e.printStackTrace();
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server("RAINBOW", bright);
+            ws.connect_to_server("RAINBOW", mainActivityView);
         } catch (Exception e) {
             textDebug.setText("WebSocketConnect failed");
             e.printStackTrace();
@@ -328,7 +328,7 @@ public class MainActivity extends AppCompatActivity {
         try
         {
             WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server(tempX, bright);
+            ws.connect_to_server(tempX, mainActivityView);
             textDebug.setText("Success");
             rDebug.setText(Integer.toString(xValue));
         }
@@ -341,7 +341,7 @@ public class MainActivity extends AppCompatActivity {
         try
         {
             WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server(tempY, bright);
+            ws.connect_to_server(tempY, mainActivityView);
             textDebug.setText("Success");
             gDebug.setText(Integer.toString(yValue));
         }
@@ -354,7 +354,7 @@ public class MainActivity extends AppCompatActivity {
         try
         {
             WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server(tempZ, bright);
+            ws.connect_to_server(tempZ, mainActivityView);
             textDebug.setText("Success");
             bDebug.setText(Integer.toString(zValue));
         }
