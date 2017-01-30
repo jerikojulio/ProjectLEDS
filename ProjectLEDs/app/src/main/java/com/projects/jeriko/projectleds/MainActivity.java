@@ -41,8 +41,9 @@ public class MainActivity extends AppCompatActivity {
         rDebug = (TextView) findViewById(R.id.text02);
         gDebug = (TextView) findViewById(R.id.text03);
         bDebug = (TextView) findViewById(R.id.text04);
-
         mainActivityView = getWindow().getDecorView().getRootView();
+        //text actionbar disini
+        getSupportActionBar().setTitle("WIFI LED CONTROLLER");
     }
 
     public void resetData(View view) {
