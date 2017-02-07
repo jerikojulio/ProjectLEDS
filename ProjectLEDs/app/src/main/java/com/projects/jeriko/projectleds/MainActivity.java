@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     TextView bDebug = (TextView) findViewById(R.id.text04);
     */
 
-    int brValue = 100;
+    int brValue = 1000;
     String cepat;
 
     @Override
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
             rDebug.setText("0");
             gDebug.setText("0");
             bDebug.setText("0");
-            brValue = 100;
+            brValue = 1000;
             bright.setText(Integer.toString(brValue));
         } catch (Exception e) {
             textDebug.setText("WebSocketConnect failed");
@@ -102,189 +102,189 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
 
             case R.id.red01:
-                xValue = 0xff;
-                yValue = 0;
-                zValue = 0;
+                xValue = 256;
+                yValue = 8;
+                zValue = 8;
                 parseit(xValue,yValue,zValue);
                 break;
 
             case R.id.red02:
-                xValue = 0xfd;
-                yValue = 0x2a;
-                zValue = 0;
+                xValue = 252;
+                yValue = 40;
+                zValue = 8;
                 parseit(xValue,yValue,zValue);
                 break;
 
             case R.id.red03:
-                xValue = 0xff;
-                yValue = 0x44;
-                zValue = 0;
+                xValue = 256;
+                yValue = 72;
+                zValue = 8;
                 parseit(xValue,yValue,zValue);
                 break;
             case R.id.red04:
-                xValue = 0xff;
-                yValue = 0x9d;
-                zValue = 0;
+                xValue = 248;
+                yValue = 160;
+                zValue = 8;
                 parseit(xValue,yValue,zValue);
                 break;
 
             case R.id.red05:
-                xValue = 0xfb;
-                yValue = 0xff;
-                zValue = 0;
+                xValue = 248;
+                yValue = 248;
+                zValue = 8;
                 parseit(xValue,yValue,zValue);
                 break;
 
             case R.id.green01:
-                xValue = 0;
-                yValue = 0xb0;
-                zValue = 0;
+                xValue = 8;
+                yValue = 176;
+                zValue = 8;
                 parseit(xValue,yValue,zValue);
                 break;
 
             case R.id.green02:
-                xValue = 0x0c;
-                yValue = 0xc8;
-                zValue = 0x0c;
+                xValue = 16;
+                yValue = 192;
+                zValue = 16;
                 parseit(xValue,yValue,zValue);
                 break;
 
             case R.id.green03:
-                xValue = 0x00;
-                yValue = 0x90;
-                zValue = 0x90;
+                xValue = 8;
+                yValue = 144;
+                zValue = 144;
                 parseit(xValue,yValue,zValue);
                 break;
 
             case R.id.green04:
-                xValue = 0x00;
-                yValue = 0x80;
-                zValue = 0x00;
+                xValue = 8;
+                yValue = 128;
+                zValue = 8;
                 parseit(xValue,yValue,zValue);
                 break;
 
             case R.id.green05:
-                xValue = 0x00;
-                yValue = 0x30;
-                zValue = 0x00;
+                xValue = 8;
+                yValue = 48;
+                zValue = 8;
                 parseit(xValue,yValue,zValue);
                 break;
 
             case R.id.blue01:
-                xValue = 0x00;
-                yValue = 0x00;
-                zValue = 0x50;
+                xValue = 8;
+                yValue = 8;
+                zValue = 90;
                 parseit(xValue,yValue,zValue);
                 break;
             case R.id.blue02:
-                xValue = 0x00;
-                yValue = 0x00;
-                zValue = 0xff;
+                xValue = 8;
+                yValue = 8;
+                zValue = 256;
                 parseit(xValue,yValue,zValue);
                 break;
 
             case R.id.blue03:
-                xValue = 0x50;
-                yValue = 0x50;
-                zValue = 0xff;
+                xValue = 90;
+                yValue = 90;
+                zValue = 256;
                 parseit(xValue,yValue,zValue);
                 break;
 
             case R.id.blue04:
-                xValue = 0x00;
-                yValue = 0x50;
-                zValue = 0x50;
+                xValue = 8;
+                yValue = 90;
+                zValue = 90;
                 parseit(xValue,yValue,zValue);
                 break;
 
             case R.id.blue05:
-                xValue = 0x80;
-                yValue = 0x00;
-                zValue = 0x50;
+                xValue = 128;
+                yValue = 8;
+                zValue = 90;
                 parseit(xValue,yValue,zValue);
                 break;
 
             case R.id.white01:
-                xValue = 0xff;
-                yValue = 0xff;
-                zValue = 0xff;
+                xValue = 256;
+                yValue = 256;
+                zValue = 256;
                 parseit(xValue,yValue,zValue);
                 break;
             case R.id.white02:
-                xValue = 0xff;
-                yValue = 0x80;
-                zValue = 0x80;
+                xValue = 256;
+                yValue = 128;
+                zValue = 128;
                 parseit(xValue,yValue,zValue);
                 break;
             case R.id.white03:
-                xValue = 0xff;
-                yValue = 0x50;
-                zValue = 0x50;
+                xValue = 256;
+                yValue = 90;
+                zValue = 90;
                 parseit(xValue,yValue,zValue);
                 break;
             case R.id.white04:
-                xValue = 0x80;
-                yValue = 0x80;
-                zValue = 0xff;
+                xValue = 128;
+                yValue = 128;
+                zValue = 256;
                 parseit(xValue,yValue,zValue);
                 break;
             case R.id.white05:
-                xValue = 0x20;
-                yValue = 0x20;
-                zValue = 0x80;
+                xValue = 32;
+                yValue = 32;
+                zValue = 128;
                 parseit(xValue,yValue,zValue);
                 break;
 
             case R.id.rplus:
                 xValue = xValue+8;
-                if (xValue>=0xff)
+                if (xValue>=256)
                 {
-                    xValue=0xff;
+                    xValue=256;
                 }
                 parseit(xValue,yValue,zValue);
                 break;
 
             case R.id.gplus:
                 yValue = yValue+8;
-                if (yValue>=0xff)
+                if (yValue>=256)
                 {
-                    yValue=0xff;
+                    yValue=256;
                 }
                 parseit(xValue,yValue,zValue);
                 break;
 
             case R.id.bplus:
                 zValue = zValue+8;
-                if (zValue>=0xff)
+                if (zValue>=256)
                 {
-                    zValue=0xff;
+                    zValue=256;
                 }
                 parseit(xValue,yValue,zValue);
                 break;
 
             case R.id.rminus:
                 xValue = xValue-8;
-                if (xValue<=0x00)
+                if (xValue<=0x80)
                 {
-                    xValue=0x00;
+                    xValue=0x08;
                 }
                 parseit(xValue,yValue,zValue);
                 break;
 
             case R.id.gminus:
                 yValue = yValue-8;
-                if (yValue<=0x00)
+                if (yValue<=8)
                 {
-                    yValue=0x00;
+                    yValue=8;
                 }
                 parseit(xValue,yValue,zValue);
                 break;
 
             case R.id.bminus:
                 zValue = zValue-8;
-                if (zValue<=0x0)
+                if (zValue<=8)
                 {
-                    zValue=0x00;
+                    zValue=8;
                 }
                 parseit(xValue,yValue,zValue);
                 break;
@@ -296,15 +296,15 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId())
         {
             case R.id.brightUp:
-               brValue = brValue+50;
-                if (brValue>=100)
+               brValue = brValue+125;
+                if (brValue>=1000)
                 {
-                    brValue=100;
+                    brValue=1000;
                 }
                 parseit(xValue,yValue,zValue);
              break;
             case R.id.brightDown:
-                brValue = brValue-50;
+                brValue = brValue-125;
                 if (brValue<=00)
                 {
                     brValue=00;
@@ -320,11 +320,11 @@ public class MainActivity extends AppCompatActivity {
         String tempY;
         String tempZ;
 
-        tempString = String.valueOf(xValue*brValue/100);
+        tempString = String.valueOf(xValue*brValue/1000);
         tempX = "x" + tempString;
-        tempString = String.valueOf(yValue*brValue/100);
+        tempString = String.valueOf(yValue*brValue/1000);
         tempY = "y" + tempString;
-        tempString = String.valueOf(zValue*brValue/100);
+        tempString = String.valueOf(zValue*brValue/1000);
         tempZ = "z" + tempString;
         try
         {
