@@ -489,7 +489,6 @@
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:id="@+id/RAINBOW"
-        android:onClick="rainBow"
         android:layout_alignTop="@+id/rplus"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />

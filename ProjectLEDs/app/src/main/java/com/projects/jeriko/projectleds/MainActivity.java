@@ -3,7 +3,6 @@ package com.projects.jeriko.projectleds;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -11,6 +10,8 @@ public class MainActivity extends AppCompatActivity {
     int xValue;
     int yValue;
     int zValue;
+    String tempString;
+
 
     private TextView bright;
     private TextView textDebug;
@@ -73,8 +74,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
-    public void rainBow(View view) {
+/*    public void rainBow(View view) {
         EditText cepaT = (EditText) findViewById(R.id.editTime);
         cepat = cepaT.getText().toString();
 
@@ -97,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+*/
     public void setColor(View view){
 
         switch (view.getId()) {
@@ -105,134 +106,134 @@ public class MainActivity extends AppCompatActivity {
                 xValue = 256;
                 yValue = 8;
                 zValue = 8;
-                parseit(xValue,yValue,zValue);
+                triColorupdate();
                 break;
 
             case R.id.red02:
                 xValue = 252;
                 yValue = 40;
                 zValue = 8;
-                parseit(xValue,yValue,zValue);
+                triColorupdate();
                 break;
 
             case R.id.red03:
                 xValue = 256;
                 yValue = 72;
                 zValue = 8;
-                parseit(xValue,yValue,zValue);
+                triColorupdate();
                 break;
             case R.id.red04:
                 xValue = 248;
                 yValue = 160;
                 zValue = 8;
-                parseit(xValue,yValue,zValue);
+                triColorupdate();
                 break;
 
             case R.id.red05:
                 xValue = 248;
                 yValue = 248;
                 zValue = 8;
-                parseit(xValue,yValue,zValue);
+                triColorupdate();
                 break;
 
             case R.id.green01:
                 xValue = 8;
                 yValue = 176;
                 zValue = 8;
-                parseit(xValue,yValue,zValue);
+                triColorupdate();
                 break;
 
             case R.id.green02:
                 xValue = 16;
                 yValue = 192;
                 zValue = 16;
-                parseit(xValue,yValue,zValue);
+                triColorupdate();
                 break;
 
             case R.id.green03:
                 xValue = 8;
                 yValue = 144;
                 zValue = 144;
-                parseit(xValue,yValue,zValue);
+                triColorupdate();
                 break;
 
             case R.id.green04:
                 xValue = 8;
                 yValue = 128;
                 zValue = 8;
-                parseit(xValue,yValue,zValue);
+                triColorupdate();
                 break;
 
             case R.id.green05:
                 xValue = 8;
                 yValue = 48;
                 zValue = 8;
-                parseit(xValue,yValue,zValue);
+                triColorupdate();
                 break;
 
             case R.id.blue01:
                 xValue = 8;
                 yValue = 8;
                 zValue = 90;
-                parseit(xValue,yValue,zValue);
+                triColorupdate();
                 break;
             case R.id.blue02:
                 xValue = 8;
                 yValue = 8;
                 zValue = 256;
-                parseit(xValue,yValue,zValue);
+                triColorupdate();
                 break;
 
             case R.id.blue03:
                 xValue = 90;
                 yValue = 90;
                 zValue = 256;
-                parseit(xValue,yValue,zValue);
+                triColorupdate();
                 break;
 
             case R.id.blue04:
                 xValue = 8;
                 yValue = 90;
                 zValue = 90;
-                parseit(xValue,yValue,zValue);
+                triColorupdate();
                 break;
 
             case R.id.blue05:
                 xValue = 128;
                 yValue = 8;
                 zValue = 90;
-                parseit(xValue,yValue,zValue);
+                triColorupdate();
                 break;
 
             case R.id.white01:
                 xValue = 256;
                 yValue = 256;
                 zValue = 256;
-                parseit(xValue,yValue,zValue);
+                triColorupdate();
                 break;
             case R.id.white02:
                 xValue = 256;
                 yValue = 128;
                 zValue = 128;
-                parseit(xValue,yValue,zValue);
+                triColorupdate();
                 break;
             case R.id.white03:
                 xValue = 256;
                 yValue = 90;
                 zValue = 90;
-                parseit(xValue,yValue,zValue);
+                triColorupdate();
                 break;
             case R.id.white04:
                 xValue = 128;
                 yValue = 128;
                 zValue = 256;
-                parseit(xValue,yValue,zValue);
+                triColorupdate();
                 break;
             case R.id.white05:
                 xValue = 32;
                 yValue = 32;
                 zValue = 128;
-                parseit(xValue,yValue,zValue);
+                triColorupdate();
                 break;
 
             case R.id.rplus:
@@ -241,7 +242,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     xValue=256;
                 }
-                parseit(xValue,yValue,zValue);
+                updateRed(xValue);
                 break;
 
             case R.id.gplus:
@@ -250,7 +251,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     yValue=256;
                 }
-                parseit(xValue,yValue,zValue);
+                updateGreen(yValue);
                 break;
 
             case R.id.bplus:
@@ -259,7 +260,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     zValue=256;
                 }
-                parseit(xValue,yValue,zValue);
+                updateBlue(zValue);
                 break;
 
             case R.id.rminus:
@@ -268,7 +269,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     xValue=0x08;
                 }
-                parseit(xValue,yValue,zValue);
+                updateRed(xValue);
                 break;
 
             case R.id.gminus:
@@ -277,7 +278,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     yValue=8;
                 }
-                parseit(xValue,yValue,zValue);
+                updateGreen(yValue);
                 break;
 
             case R.id.bminus:
@@ -286,7 +287,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     zValue=8;
                 }
-                parseit(xValue,yValue,zValue);
+                updateBlue(zValue);
                 break;
         }
     }
@@ -301,31 +302,23 @@ public class MainActivity extends AppCompatActivity {
                 {
                     brValue=1000;
                 }
-                parseit(xValue,yValue,zValue);
-             break;
+                triColorupdate ();
+                break;
             case R.id.brightDown:
                 brValue = brValue-125;
                 if (brValue<=00)
                 {
                     brValue=00;
                 }
-                parseit(xValue,yValue,zValue);
+                triColorupdate();
                 break;
         }
     }
-    public void parseit (int xValue,int  yValue, int zValue)
+    public void updateRed (int xValue)
     {
-        String tempString;
         String tempX;
-        String tempY;
-        String tempZ;
-
         tempString = String.valueOf(xValue*brValue/1000);
         tempX = "x" + tempString;
-        tempString = String.valueOf(yValue*brValue/1000);
-        tempY = "y" + tempString;
-        tempString = String.valueOf(zValue*brValue/1000);
-        tempZ = "z" + tempString;
         try
         {
             WebSocketConnect ws = new WebSocketConnect();
@@ -339,6 +332,16 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
             rDebug.setText("ERROR SENDING");
         }
+    }
+    public void updateGreen (int  yValue)
+    {
+
+        String tempY;
+
+
+        tempString = String.valueOf(yValue*brValue/1000);
+        tempY = "y" + tempString;
+
         try
         {
             WebSocketConnect ws = new WebSocketConnect();
@@ -352,6 +355,16 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
             gDebug.setText("ERROR SENDING");
         }
+
+
+    }
+    public void updateBlue (int zValue)
+    {
+        String tempZ;
+
+        tempString = String.valueOf(zValue*brValue/1000);
+        tempZ = "z" + tempString;
+
         try
         {
             WebSocketConnect ws = new WebSocketConnect();
@@ -365,7 +378,11 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
             bDebug.setText("ERROR SENDING");
         }
-
     }
-
+    public void triColorupdate ()
+    {
+        updateRed(xValue);
+        updateGreen(yValue);
+        updateBlue(zValue);
+    }
 }
