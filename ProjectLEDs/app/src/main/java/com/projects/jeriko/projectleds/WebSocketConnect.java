@@ -21,16 +21,10 @@ public class WebSocketConnect {
 
     private WebSocketClient mWebSocketClient;
 
-    public void connect_to_server(String inputColor, View messageDisplayer) {
+    public void connect_to_server(String inputColor, final MainActivity mainClass) {
         final String color;
-        final View localMessageDisplayer;
-        final TextView xSend;
-        final TextView receiver;
-        color = inputColor;
-        localMessageDisplayer = messageDisplayer;
 
-        xSend = (TextView) localMessageDisplayer.findViewById(R.id.text02);
-        receiver = (TextView) localMessageDisplayer.findViewById(R.id.receiveText);
+        color = inputColor;
 
         URI uri;
         try {
@@ -47,18 +41,17 @@ public class WebSocketConnect {
             public void onOpen(ServerHandshake serverHandshake) {
                 Log.i("Websocket", "Opened");
                 mWebSocketClient.send(color);
-                // mWebSocketClient.close();
             }
 
             @Override
             public void onMessage(String s) {
-                final String message = s;
                 Log.i("Websocket", "onMessage" + s);
-                receiver.setText(s);
+                mainClass.updateViewReceiver(s);
+
                 try {
                     mWebSocketClient.close();
                 } catch (Exception e) {
-                    receiver.setText(s);
+                    mainClass.updateViewReceiver(s);
                 }
             }
 

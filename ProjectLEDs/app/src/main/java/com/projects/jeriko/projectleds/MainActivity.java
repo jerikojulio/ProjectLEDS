@@ -21,16 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     private View mainActivityView;
 
-    /*
-    TextView bright = (TextView) findViewById(R.id.brtext);
-    TextView textDebug = (TextView) findViewById(R.id.text01);
-    TextView rDebug = (TextView) findViewById(R.id.text02);
-    TextView gDebug = (TextView) findViewById(R.id.text03);
-    TextView bDebug = (TextView) findViewById(R.id.text04);
-    */
-
     int brValue = 1000;
-    String cepat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         gDebug = (TextView) findViewById(R.id.text03);
         bDebug = (TextView) findViewById(R.id.text04);
         mainActivityView = getWindow().getDecorView().getRootView();
-        //text actionbar disini
         getSupportActionBar().setTitle("WIFI LED CONTROLLER");
     }
 
@@ -51,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server("RESET", mainActivityView);
+            ws.connect_to_server("RESET", this);
             rDebug.setText("0");
             gDebug.setText("0");
             bDebug.setText("0");
@@ -68,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server("LED", mainActivityView);
+            ws.connect_to_server("LED", this);
         } catch (Exception e) {
             textDebug.setText("WebSocketConnect failed");
             e.printStackTrace();
@@ -104,42 +94,43 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.red01:
                 xValue = 256;
-                yValue = 8;
-                zValue = 8;
+                yValue = 0;
+                zValue = 0;
                 triColorupdate();
                 break;
 
             case R.id.red02:
                 xValue = 252;
                 yValue = 40;
-                zValue = 8;
+                zValue = 0;
                 triColorupdate();
                 break;
 
             case R.id.red03:
                 xValue = 256;
                 yValue = 72;
-                zValue = 8;
+                zValue = 0;
                 triColorupdate();
                 break;
+
             case R.id.red04:
                 xValue = 248;
                 yValue = 160;
-                zValue = 8;
+                zValue = 0;
                 triColorupdate();
                 break;
 
             case R.id.red05:
                 xValue = 248;
                 yValue = 248;
-                zValue = 8;
+                zValue = 0;
                 triColorupdate();
                 break;
 
             case R.id.green01:
-                xValue = 8;
+                xValue = 0;
                 yValue = 176;
-                zValue = 8;
+                zValue = 0;
                 triColorupdate();
                 break;
 
@@ -151,35 +142,36 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.green03:
-                xValue = 8;
+                xValue = 0;
                 yValue = 144;
                 zValue = 144;
                 triColorupdate();
                 break;
 
             case R.id.green04:
-                xValue = 8;
+                xValue = 0;
                 yValue = 128;
-                zValue = 8;
+                zValue = 0;
                 triColorupdate();
                 break;
 
             case R.id.green05:
-                xValue = 8;
+                xValue = 0;
                 yValue = 48;
-                zValue = 8;
+                zValue = 0;
                 triColorupdate();
                 break;
 
             case R.id.blue01:
-                xValue = 8;
-                yValue = 8;
+                xValue = 0;
+                yValue = 0;
                 zValue = 90;
                 triColorupdate();
                 break;
+
             case R.id.blue02:
-                xValue = 8;
-                yValue = 8;
+                xValue = 0;
+                yValue = 0;
                 zValue = 256;
                 triColorupdate();
                 break;
@@ -192,7 +184,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.blue04:
-                xValue = 8;
+                xValue = 0;
                 yValue = 90;
                 zValue = 90;
                 triColorupdate();
@@ -200,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.blue05:
                 xValue = 128;
-                yValue = 8;
+                yValue = 0;
                 zValue = 90;
                 triColorupdate();
                 break;
@@ -211,24 +203,28 @@ public class MainActivity extends AppCompatActivity {
                 zValue = 256;
                 triColorupdate();
                 break;
+
             case R.id.white02:
                 xValue = 256;
                 yValue = 128;
                 zValue = 128;
                 triColorupdate();
                 break;
+
             case R.id.white03:
                 xValue = 256;
                 yValue = 90;
                 zValue = 90;
                 triColorupdate();
                 break;
+
             case R.id.white04:
                 xValue = 128;
                 yValue = 128;
                 zValue = 256;
                 triColorupdate();
                 break;
+
             case R.id.white05:
                 xValue = 32;
                 yValue = 32;
@@ -237,7 +233,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.rplus:
-                xValue = xValue+8;
+                xValue = xValue+16;
                 if (xValue>=256)
                 {
                     xValue=256;
@@ -246,7 +242,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.gplus:
-                yValue = yValue+8;
+                yValue = yValue+16;
                 if (yValue>=256)
                 {
                     yValue=256;
@@ -255,7 +251,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.bplus:
-                zValue = zValue+8;
+                zValue = zValue+16;
                 if (zValue>=256)
                 {
                     zValue=256;
@@ -264,32 +260,33 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.rminus:
-                xValue = xValue-8;
-                if (xValue<=0x80)
+                xValue = xValue-16;
+                if (xValue<=0)
                 {
-                    xValue=0x08;
+                    xValue=0;
                 }
                 updateRed(xValue);
                 break;
 
             case R.id.gminus:
-                yValue = yValue-8;
-                if (yValue<=8)
+                yValue = yValue-16;
+                if (yValue<=0)
                 {
-                    yValue=8;
+                    yValue=0;
                 }
                 updateGreen(yValue);
                 break;
 
             case R.id.bminus:
-                zValue = zValue-8;
-                if (zValue<=8)
+                zValue = zValue-16;
+                if (zValue<=0)
                 {
-                    zValue=8;
+                    zValue=0;
                 }
                 updateBlue(zValue);
                 break;
         }
+        brValue = 1000;
     }
 
     public void brightness(View view)
@@ -302,18 +299,20 @@ public class MainActivity extends AppCompatActivity {
                 {
                     brValue=1000;
                 }
-                triColorupdate ();
+                triColorupdate();
                 break;
+
             case R.id.brightDown:
                 brValue = brValue-125;
-                if (brValue<=00)
+                if (brValue<=0)
                 {
-                    brValue=00;
+                    brValue=0;
                 }
                 triColorupdate();
                 break;
         }
     }
+
     public void updateRed (int xValue)
     {
         String tempX;
@@ -322,8 +321,7 @@ public class MainActivity extends AppCompatActivity {
         try
         {
             WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server(tempX, mainActivityView);
-            textDebug.setText("Success");
+            ws.connect_to_server(tempX, this);
             rDebug.setText(Integer.toString(xValue));
         }
         catch (Exception e)
@@ -335,9 +333,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void updateGreen (int  yValue)
     {
-
         String tempY;
-
 
         tempString = String.valueOf(yValue*brValue/1000);
         tempY = "y" + tempString;
@@ -345,8 +341,7 @@ public class MainActivity extends AppCompatActivity {
         try
         {
             WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server(tempY, mainActivityView);
-            textDebug.setText("Success");
+            ws.connect_to_server(tempY, this);
             gDebug.setText(Integer.toString(yValue));
         }
         catch (Exception e)
@@ -355,8 +350,6 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
             gDebug.setText("ERROR SENDING");
         }
-
-
     }
     public void updateBlue (int zValue)
     {
@@ -368,8 +361,7 @@ public class MainActivity extends AppCompatActivity {
         try
         {
             WebSocketConnect ws = new WebSocketConnect();
-            ws.connect_to_server(tempZ, mainActivityView);
-            textDebug.setText("Success");
+            ws.connect_to_server(tempZ, this);
             bDebug.setText(Integer.toString(zValue));
         }
         catch (Exception e)
@@ -384,5 +376,11 @@ public class MainActivity extends AppCompatActivity {
         updateRed(xValue);
         updateGreen(yValue);
         updateBlue(zValue);
+    }
+
+    public void updateViewReceiver(String s){
+        final TextView receiver;
+        receiver = (TextView) findViewById(R.id.receiveText);
+        receiver.setText(s);
     }
 }
